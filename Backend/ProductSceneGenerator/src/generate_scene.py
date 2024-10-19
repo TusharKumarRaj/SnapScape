@@ -32,6 +32,8 @@ def generate_scene(pipe, prompt, canvas, mask, output_path):
         scene_height -= (scene_height % 8)
         scene_width -= (scene_width % 8)
 
+        print("worked")
+
         # Generate the scene image using the pipeline
         scene_image = pipe(
             prompt=prompt,
@@ -45,6 +47,7 @@ def generate_scene(pipe, prompt, canvas, mask, output_path):
         # Save the generated image
         output_file_path = os.path.join(output_path, "scene.jpg")
         scene_image.save(output_file_path)
+        
 
         return scene_image
 
