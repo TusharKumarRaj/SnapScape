@@ -15,36 +15,6 @@ from src.generate_video import generate_video
 app = Flask(__name__)
 CORS(app)  # Allow requests from any origin
 
-# Mock implementations for the subfunctions used in generate_image
-def remove_background(image_path, output_path):
-    # Placeholder function: Add your logic for background removal
-    print(f"Removing background for {image_path}")
-    no_bg_path = os.path.join(output_path, "no_bg_image.png")
-    # For now, assume it returns the same image path without modifying
-    return image_path
-
-def create_image_canvas(no_bg_path):
-    # Placeholder function: Add your logic for creating a canvas
-    print(f"Creating image canvas for {no_bg_path}")
-    return no_bg_path  # Mock canvas as the same image
-
-def create_mask(canvas):
-    # Placeholder function: Add your logic for creating a mask
-    print(f"Creating mask for canvas {canvas}")
-    return "mock_mask.png"  # Mock mask path
-
-def create_scene_pipeline():
-    # Placeholder function: Add your logic for creating the scene pipeline
-    print("Creating scene pipeline")
-    return "mock_pipeline"
-
-def generate_scene(text_prompt, canvas, mask, output_path):
-    # Placeholder function: Add your logic to generate a scene using the pipeline, mask, and canvas
-    print(f"Generating scene with prompt: {text_prompt}")
-    scene_path = os.path.join(output_path, "generated_scene.png")
-    # For now, return a mock scene path
-    return scene_path
-
 
 # Main image processing function that includes the entire pipeline
 def generate_image(image_path, text_prompt):
@@ -95,7 +65,7 @@ def process_image():
             temp_image.write(image_bytes)
 
         # Call the function to generate the scene image
-        resultant_image_path = generate_image("temp_image.png", text)
+        resultant_image_path = generate_image("/home/tusharkumarraj/SnapScape/Backend/ProductSceneGenerator/temp_image.png", text)
 
         # Load the resultant image and encode it to base64
         with open(resultant_image_path, "rb") as img_file:
