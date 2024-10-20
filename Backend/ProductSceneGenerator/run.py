@@ -38,7 +38,7 @@ def generate_image(image_path, text_prompt):
         print("Scene Generation Pipeline Created Successfully!")
 
         # Step 4: Generate scene
-        scene = generate_scene(text_prompt, canvas, mask, output_path)
+        scene = generate_scene(scene_pipeline,text_prompt, canvas, mask, output_path)
         print("Scene Generated Successfully!")
 
         return scene  # Return the generated scene file path
