@@ -28,7 +28,7 @@ class _ScanState extends State<Scan>{
   void switchScreen()
   {
     setState(() {
-      activeScreen = HomeScreen();
+      activeScreen = const HomeScreen();
     });
   }
 

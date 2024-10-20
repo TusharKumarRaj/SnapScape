@@ -7,13 +7,13 @@ class StartScreen extends StatelessWidget {
 
   final void Function() startApp;
 
-   void switchScreen() {
-    Timer(Duration(seconds: 2), startApp);
+   void DelayedswitchScreen() {
+    Timer(const Duration(seconds: 2), startApp);
   }
 
   @override
   Widget build(context) {
-      switchScreen();
+      DelayedswitchScreen();
     return Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
